@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpShape.Models
 {
-    public class Rectangle
+    public class Rectangle: Shape
     {
         public Rectangle(double Height, double Width)
         {
@@ -15,5 +15,9 @@ namespace CSharpShape.Models
         }
         public double Height { get; set; }
         public double Width { get; set; }
+        public override double Area()
+        {
+            return Height * Width;
+        }
     }
 }

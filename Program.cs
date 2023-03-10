@@ -8,7 +8,7 @@ using Rectangle = CSharpShape.Models.Rectangle;
 
 class Program
 {
-    public double TotalArea(object[] arrObjects)
+    public static double TotalArea(object[] arrObjects)
     {
 
         double area = 0;
@@ -17,7 +17,7 @@ class Program
         Triangle objTriangle;
         foreach (var obj in arrObjects)
         {
-            if(obj is Rectangle)
+            if (obj is Rectangle)
             {
                 objRectangle = (Rectangle)obj;
                 area += objRectangle.Height * objRectangle.Width;
@@ -34,5 +34,17 @@ class Program
             }
         }
         return area;
+    }
+    static void Main(string[] args)
+    {
+        Rectangle rect = new Rectangle(10, 5);
+        Circle Cir = new Circle(4);
+        Triangle Tri = new Triangle(10, 5);
+
+        object[] arrObjects = { rect, Cir, Tri };
+
+        double totalArea = TotalArea(arrObjects);
+
+        Console.WriteLine("La somme des aires est : " + totalArea);
     }
 }
